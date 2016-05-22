@@ -128,6 +128,7 @@ $(document).keydown(function (event) {
 
 function isGameOver() {
     // if(noSpace(board))
+    //感觉变卡了
 }
 
 function moveLeft() {
