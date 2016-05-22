@@ -84,12 +84,24 @@ function generateOneNumber() {
     var randx =parseInt( Math.floor(Math.random() * 4) );
     var randy =parseInt( Math.floor(Math.random() * 4) );
     //检测位置是否可用
-    while(true){
+    //优化算法
+    var time = 0;
+    while(time < 50){
         if(board[randx][randy]==0)
             break;
-
         randx =parseInt( Math.floor(Math.random() * 4) );
         randy =parseInt( Math.floor(Math.random() * 4) );
+
+        time++;
+    }
+    //随机生成位置如果50次还没找到的话就人工生成位置
+    if(time == 50 ){
+        for(var i=0;i<4;i++)
+            for(var j=0;j<4;j++)
+                if(board[i][j]==0){
+                    randx=i;
+                    randy=j;
+                }
     }
 
     //随机一个数字

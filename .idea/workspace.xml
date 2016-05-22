@@ -19,7 +19,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
+    <option name="PATCH_PATH" value="H:\web2048" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -40,8 +40,8 @@
       <file leaf-file-name="main2048.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/main2048.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="274" column="43" selection-start-line="274" selection-start-column="43" selection-end-line="274" selection-end-column="43" />
+            <state relative-caret-position="487">
+              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -255,6 +255,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/GitHub.appref-ms" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 8.0.33">
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
@@ -762,7 +763,7 @@
       <workItem from="1463803933856" duration="23358000" />
       <workItem from="1463842447461" duration="5644000" />
       <workItem from="1463892752159" duration="3236000" />
-      <workItem from="1463917653644" duration="2433000" />
+      <workItem from="1463917653644" duration="3027000" />
     </task>
     <task id="LOCAL-00001" summary="test Idea github">
       <created>1463903968132</created>
@@ -792,11 +793,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463919230578</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix a bug: 2 2 4 8 add together&#10;the game 2048 is completed">
+      <created>1463920194105</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1463920194105</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34671000" />
+    <option name="totallyTimeSpent" value="35265000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -846,7 +854,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test Idea github" />
     <MESSAGE value="Add new function score" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add new function score" />
+    <MESSAGE value="fix a bug: 2 2 4 8 add together&#10;the game 2048 is completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix a bug: 2 2 4 8 add together&#10;the game 2048 is completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1054,8 +1063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/main2048.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="274" column="43" selection-start-line="274" selection-start-column="43" selection-end-line="274" selection-end-column="43" />
+        <state relative-caret-position="487">
+          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
