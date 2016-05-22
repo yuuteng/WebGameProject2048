@@ -106,3 +106,9 @@ function noBlockVertical(row1,col,row2,board) {
     //没障碍物
     return true;
 }
+//是否可以移动
+function noMove( board ) {
+    if(canMoveUp()||canMoveDown()||canMoveLeft()||canMoveRight())
+        return false;
+    return true;
+}
