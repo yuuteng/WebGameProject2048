@@ -3,6 +3,8 @@
  */
 var board = new Array();
 var score = 0;
+//记录每个小格子是否已经发生了一次碰撞
+var hasConflicted = new Array();
 
 $(document).ready(function () {
     newGame();
@@ -29,8 +31,10 @@ function init() {
     //将一维数组board转化为二维,初始化为0
     for(var i=0;i<4;i++){
         board[i]=new Array();
+        hasConflicted[i]=new Array();
         for(var j=0;j<4;j++){
             board[i][j]=0;
+            hasConflicted[i][j]=false;//初始都没有碰撞
         }
     }
     updateBoardView();
@@ -67,6 +71,7 @@ function updateBoardView() {
                 //显示数字的值
                 theNumberCell.text(board[i][j]);
             }
+            hasConflicted[i][j]=false;
         }
 }
 
@@ -157,8 +162,9 @@ function moveLeft() {
                         board[i][j]=0;
                         continue;
                     }
-                    //i k 与i j元素 相等 && i j->i k移动过程中没有障碍物
-                    else if(board[i][k]==board[i][j] && noBlockHorizontal(i,k,j,board)){
+                    //1. i k 与i j元素 相等 &&2. i j->i k移动过程中没有障碍物 &&
+                    // 3.将要移动的i k 位置没有碰撞
+                    else if(board[i][k]==board[i][j] && noBlockHorizontal(i,k,j,board) && !hasConflicted[i][k]){
                         //move
                         showMoveAnimation(i,j,i,k);
                         //add 叠加
@@ -167,6 +173,7 @@ function moveLeft() {
                         //add score 增加两个数字叠加之后的分数 board[i][k]
                         score = score + board[i][k];
                         updateScore(score);
+                        hasConflicted[i][k]=true;
                         continue;
                     }
                 }
@@ -195,7 +202,7 @@ function moveRight() {
                         board[i][j]=0;
                         continue;
                     }
-                    else if(board[i][k]==board[i][j] && noBlockHorizontal(i,j,k,board)){
+                    else if(board[i][k]==board[i][j] && noBlockHorizontal(i,j,k,board) &&!hasConflicted[i][k]){
                         //move
                         showMoveAnimation(i,j,i,k);
                         //add
@@ -204,6 +211,7 @@ function moveRight() {
                         //add score 增加两个数字叠加之后的分数 board[i][k]
                         score = score + board[i][k];
                         updateScore(score);
+                        hasConflicted[i][k]=true;
                         continue;
                     }
                 }
@@ -227,13 +235,14 @@ function moveUp() {
                         board[i][j]=0;
                         continue;
                     }
-                    else if(board[k][j]==board[i][j] && noBlockVertical(k,j,i,board)){
+                    else if(board[k][j]==board[i][j] && noBlockVertical(k,j,i,board)&& !hasConflicted[k][j]){
                         showMoveAnimation(i,j,k,j);
                         board[k][j] *=2;
                         board[i][j] = 0;
                         //add score 增加两个数字叠加之后的分数 board[k][j]
                         score = score + board[k][j];
                         updateScore(score);
+                        hasConflicted[k][j]=true;
                         continue;
                     }
                 }
@@ -257,13 +266,14 @@ function moveDown() {
                         board[i][j]=0;
                         continue;
                     }
-                    else if(board[k][j]==board[i][j] && noBlockVertical(i,j,k,board)){
+                    else if(board[k][j]==board[i][j] && noBlockVertical(i,j,k,board)&& !hasConflicted[k][j]){
                         showMoveAnimation(i,j,k,j);
                         board[k][j]*=2;
                         board[i][j]=0;
                         //add score 增加两个数字叠加之后的分数 board[k][j]
                         score = score + board[k][j];
                         updateScore(score);
+                        hasConflicted[k][j]=true;
                         continue;
                     }
                 }
