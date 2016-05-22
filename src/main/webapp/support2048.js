@@ -112,3 +112,22 @@ function noMove( board ) {
         return false;
     return true;
 }
+
+function getWords( number ) {
+    switch (number){
+        case 2:return "小白";break;
+        case 4:return "实习生";break;
+        case 8:return "程序猿";break;
+        case 16:return "项目经理";break;
+        case 32:return "架构师";break;
+        case 64:return "技术经理";break;
+        case 128:return "高级经理";break;
+        case 256:return "技术总监";break;
+        case 512:return "副总裁";break;
+        case 1024:return "CTO";break;
+        case 2048:return "总裁";break;
+        case 4096:return "董事长";break;
+        case 8192:return "于滕";break;
+    }
+    return "";
+}

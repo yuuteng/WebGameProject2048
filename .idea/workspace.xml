@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5f29fc37-b6f6-4255-9a1e-f3e4c28bee8c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/2048.css" afterPath="$PROJECT_DIR$/src/main/webapp/2048.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/main2048.js" afterPath="$PROJECT_DIR$/src/main/webapp/main2048.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showAnimation.js" afterPath="$PROJECT_DIR$/src/main/webapp/showAnimation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/support2048.js" afterPath="$PROJECT_DIR$/src/main/webapp/support2048.js" />
     </list>
     <ignored path="web2048.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main2048.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main2048.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/main2048.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+            <state relative-caret-position="-6039">
+              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
               <folding>
                 <element signature="e#0#40#0" expanded="false" />
               </folding>
@@ -52,8 +55,8 @@
       <file leaf-file-name="support2048.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/support2048.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+            <state relative-caret-position="628">
+              <caret line="127" column="34" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc;n#getPosTop#0" expanded="false" />
               </folding>
@@ -64,11 +67,21 @@
       <file leaf-file-name="showAnimation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/showAnimation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            <state relative-caret-position="270">
+              <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding>
                 <element signature="n#!!doc;n#showNumberWithAnimation#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2048.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/2048.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +99,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="OptimizeAlgorthm" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -98,11 +114,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/showanimation.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/support.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/2048.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/support2048.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/showAnimation.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/main2048.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/showAnimation.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/2048.css" />
       </list>
     </option>
   </component>
@@ -763,7 +779,7 @@
       <workItem from="1463803933856" duration="23358000" />
       <workItem from="1463842447461" duration="5644000" />
       <workItem from="1463892752159" duration="3236000" />
-      <workItem from="1463917653644" duration="3027000" />
+      <workItem from="1463917653644" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="test Idea github">
       <created>1463903968132</created>
@@ -800,11 +816,18 @@
       <option name="project" value="LOCAL" />
       <updated>1463920194105</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Optimize the algorithm&#10;creat a random position">
+      <created>1463920821669</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1463920821669</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35265000" />
+    <option name="totallyTimeSpent" value="37081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -855,7 +878,8 @@
     <MESSAGE value="test Idea github" />
     <MESSAGE value="Add new function score" />
     <MESSAGE value="fix a bug: 2 2 4 8 add together&#10;the game 2048 is completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix a bug: 2 2 4 8 add together&#10;the game 2048 is completed" />
+    <MESSAGE value="Optimize the algorithm&#10;creat a random position" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize the algorithm&#10;creat a random position" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1016,13 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/2048.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/jquery-1.12.4.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1041,20 +1058,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/showAnimation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!doc;n#showNumberWithAnimation#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/support2048.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+        <state relative-caret-position="628">
+          <caret line="127" column="34" selection-start-line="127" selection-start-column="34" selection-end-line="127" selection-end-column="34" />
           <folding>
             <element signature="n#!!doc;n#getPosTop#0" expanded="false" />
           </folding>
@@ -1063,11 +1070,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/main2048.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="96" column="30" selection-start-line="96" selection-start-column="30" selection-end-line="96" selection-end-column="30" />
+        <state relative-caret-position="-6039">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
           <folding>
             <element signature="e#0#40#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/showAnimation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc;n#showNumberWithAnimation#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/2048.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
