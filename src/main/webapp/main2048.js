@@ -34,6 +34,9 @@ function init() {
         }
     }
     updateBoardView();
+    //初始化分数
+    score = 0;
+    updateScore(score);
 }
 
 function updateBoardView() {
@@ -161,6 +164,9 @@ function moveLeft() {
                         //add 叠加
                         board[i][k] += board[i][j];
                         board[i][j]=0;
+                        //add score 增加两个数字叠加之后的分数 board[i][k]
+                        score = score + board[i][k];
+                        updateScore(score);
                         continue;
                     }
                 }
@@ -195,6 +201,9 @@ function moveRight() {
                         //add
                         board[i][k] *=2;
                         board[i][j]=0;
+                        //add score 增加两个数字叠加之后的分数 board[i][k]
+                        score = score + board[i][k];
+                        updateScore(score);
                         continue;
                     }
                 }
@@ -222,6 +231,9 @@ function moveUp() {
                         showMoveAnimation(i,j,k,j);
                         board[k][j] *=2;
                         board[i][j] = 0;
+                        //add score 增加两个数字叠加之后的分数 board[k][j]
+                        score = score + board[k][j];
+                        updateScore(score);
                         continue;
                     }
                 }
@@ -249,6 +261,9 @@ function moveDown() {
                         showMoveAnimation(i,j,k,j);
                         board[k][j]*=2;
                         board[i][j]=0;
+                        //add score 增加两个数字叠加之后的分数 board[k][j]
+                        score = score + board[k][j];
+                        updateScore(score);
                         continue;
                     }
                 }

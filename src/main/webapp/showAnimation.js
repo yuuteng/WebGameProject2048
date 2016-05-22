@@ -26,3 +26,7 @@ function showMoveAnimation(fromx,fromy,tox,toy) {
         left:getPosLeft(tox,toy)
     },200);
 }
+//update the score
+function updateScore( score ) {
+    $('#score').text(score);
+}
