@@ -143,6 +143,7 @@ function generateOneNumber() {
 
     return true;
 }
+
 //键盘控制
 $(document).keydown(function (event) {
     switch (event.keyCode){
