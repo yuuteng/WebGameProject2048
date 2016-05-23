@@ -1,11 +1,9 @@
 # Web Game 2048
--A web project game 2048
 
--Practice the use of HTML CSS JS Jquery 
-
--Using IDE IntelliJ IDEA
-
--This game can adjust to diffrent device automaticly including PCweb, Andriod or IOS phones
+- A web project game 2048
+- Practice the use of HTML CSS JS Jquery 
+- Using IDE IntelliJ IDEA
+- This game can adjust to diffrent device automaticly including PCweb, Andriod or IOS phones
 
 Version 2048 pic:
 
