@@ -9,8 +9,8 @@ function showNumberWithAnimation(i,j,randNumber) {
     numberCell.css('background-color',getNumberBackgroundColor(randNumber));
     numberCell.css('color',getNumberColor(randNumber));
 
-    //numberCell.text(getWords(randNumber));
-    numberCell.text(randNumber);
+    numberCell.text(getWords(randNumber));
+    //numberCell.text(randNumber);
 
     //动画 jQuery 的animate(a:变成什么样子,b:完成时间毫秒);
     numberCell.animate({

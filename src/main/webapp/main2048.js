@@ -95,13 +95,13 @@ function updateBoardView() {
                 //选择文字前景色
                 theNumberCell.css('color',getNumberColor(board[i][j]));
                 //显示数字的值
-                //theNumberCell.text(getWords(board[i][j]));
-                theNumberCell.text(board[i][j]);
+                theNumberCell.text(getWords(board[i][j]));
+                //theNumberCell.text(board[i][j]);
             }
             hasConflicted[i][j]=false;
         }
     $('.number-cell').css('line-height',cellSideLength + 'px');
-    $('.number-cell').css('font-size',0.4*cellSideLength + 'px');
+    $('.number-cell').css('font-size',0.2*cellSideLength + 'px');
 }
 
 function generateOneNumber() {
