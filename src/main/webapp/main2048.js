@@ -101,7 +101,7 @@ function updateBoardView() {
             hasConflicted[i][j]=false;
         }
     $('.number-cell').css('line-height',cellSideLength + 'px');
-    $('.number-cell').css('font-size',0.2*cellSideLength + 'px');
+    $('.number-cell').css('font-size',0.4*cellSideLength + 'px');
 }
 
 function generateOneNumber() {
