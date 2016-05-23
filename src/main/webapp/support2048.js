@@ -1,17 +1,40 @@
 /**
  * Created by yuut on 2016/5/21.
  */
-//获取距离div顶端的高度
+//获取设备屏幕的长宽
+documentWidth = window.screen.availWidth; //获取设备屏幕的宽度
+gridContainerWidth = 0.92 * documentWidth; // 大格子占92%的宽度
+cellSideLength = 0.18 * documentWidth; //每个小格子边长18%
+cellSpace = 0.04 * documentWidth; //小格子的间距
+/**
+ * 获取距离div顶端的高度
+ * */
 function getPosTop(i,j) {
-    return 20+i*120;
+    //return 20+i*120;
+    return cellSpace + i * (cellSpace+cellSideLength);
 }
 //获取距离div左端的距离
 function getPosLeft(i,j) {
-    return 20+j*120;
+    //return 20+j*120;
+    return cellSpace + j * (cellSpace+cellSideLength);
 }
 //根据board中数字值,返回数字对应的背景颜色
 function getNumberBackgroundColor(number) {
     switch (number){
+        //原版颜色
+        // case 2:return "#eee4da";break;
+        // case 4:return "#ede0c8";break;
+        // case 8:return "#f2b179";break;
+        // case 16:return "#f59563";break;
+        // case 32:return "#f67c5f";break;
+        // case 64:return "#f65e3b";break;
+        // case 128:return "#edcf72";break;
+        // case 256:return "#edcc61";break;
+        // case 512:return "#edc850";break;
+        // case 1024:return "#edc53f";break;
+        // case 2048:return "#edc22e";break;
+        // case 4096:return "#3c3a32";break;
+        // case 8192:return "#93c";break;
         case 2:return "#eee4da";break;
         case 4:return "#ede0c8";break;
         case 8:return "#f2b179";break;
@@ -111,4 +134,23 @@ function noMove( board ) {
     if(canMoveUp(board)||canMoveDown(board)||canMoveLeft(board)||canMoveRight(board))
         return false;
     return true;
+}
+
+function getWords( number ) {
+    switch (number){
+        case 2:return "小白";break;
+        case 4:return "实习生";break;
+        case 8:return "程序猿";break;
+        case 16:return "项目经理";break;
+        case 32:return "架构师";break;
+        case 64:return "技术经理";break;
+        case 128:return "高级经理";break;
+        case 256:return "技术总监";break;
+        case 512:return "副总裁";break;
+        case 1024:return "CTO";break;
+        case 2048:return "总裁";break;
+        case 4096:return "董事长";break;
+        case 8192:return "于滕";break;
+    }
+    return "";
 }

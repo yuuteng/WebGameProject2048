@@ -7,8 +7,26 @@ var score = 0;
 var hasConflicted = new Array();
 
 $(document).ready(function () {
+    prepareForMobile();
     newGame();
 })
+//移动端使用的时候 调用 所获取的尺寸
+function prepareForMobile() {
+    if(documentWidth > 500){
+        gridContainerWidth = 500;
+        cellSideLength = 100;
+        cellSpace = 20;
+    }
+    //大方块css调整
+    $('#grid-container').css('width',gridContainerWidth - 2*cellSpace);
+    $('#grid-container').css('height',gridContainerWidth - 2*cellSpace);
+    $('#grid-container').css('padding',cellSpace);
+    $('#grid-container').css('border-radius',0.02 * gridContainerWidth);
+    //每个小方格
+    $('.grid-cell').css('width',cellSideLength);
+    $('.grid-cell').css('height',cellSideLength);
+    $('.grid-cell').css('border-radius',0.02 * cellSideLength);
+}
 
 //初始化游戏
 function newGame() {
@@ -56,12 +74,14 @@ function updateBoardView() {
                 theNumberCell.css('width','0px');
                 theNumberCell.css('height','0px');
                 //放中间
-                theNumberCell.css('top',getPosTop(i,j)+50);
-                theNumberCell.css('left',getPosLeft(i,j)+50);
+                // theNumberCell.css('top',getPosTop(i,j)+50);
+                // theNumberCell.css('left',getPosLeft(i,j)+50);
+                theNumberCell.css('top',getPosTop(i,j) + cellSideLength/2);
+                theNumberCell.css('left',getPosLeft(i,j) + cellSideLength/2);
             }
             else {
-                theNumberCell.css('width','100px');
-                theNumberCell.css('height','100px');
+                theNumberCell.css('width',cellSideLength);
+                theNumberCell.css('height',cellSideLength);
                 theNumberCell.css('top',getPosTop(i,j));
                 theNumberCell.css('left',getPosLeft(i,j));
                 //根据数字选择颜色
@@ -69,10 +89,13 @@ function updateBoardView() {
                 //选择文字前景色
                 theNumberCell.css('color',getNumberColor(board[i][j]));
                 //显示数字的值
+                //theNumberCell.text(getWords(board[i][j]));
                 theNumberCell.text(board[i][j]);
             }
             hasConflicted[i][j]=false;
         }
+    $('.number-cell').css('line-height',cellSideLength + 'px');
+    $('.number-cell').css('font-size',0.6*cellSideLength + 'px');
 }
 
 function generateOneNumber() {
@@ -105,7 +128,7 @@ function generateOneNumber() {
     }
 
     //随机一个数字
-    var randNumber = Math.random() <0.5 ? 2 : 4 ;
+    var randNumber = Math.random() <0.5 ? 64 : 128 ;
     //在随机位置上显示数字
     board[randx][randy]=randNumber;
 
