@@ -6,6 +6,12 @@ var score = 0;
 //记录每个小格子是否已经发生了一次碰撞
 var hasConflicted = new Array();
 
+//捕捉触控
+var startx = 0;
+var starty = 0;
+var endx = 0;
+var endy = 0;
+
 $(document).ready(function () {
     prepareForMobile();
     newGame();
@@ -95,7 +101,7 @@ function updateBoardView() {
             hasConflicted[i][j]=false;
         }
     $('.number-cell').css('line-height',cellSideLength + 'px');
-    $('.number-cell').css('font-size',0.6*cellSideLength + 'px');
+    $('.number-cell').css('font-size',0.4*cellSideLength + 'px');
 }
 
 function generateOneNumber() {
@@ -128,7 +134,7 @@ function generateOneNumber() {
     }
 
     //随机一个数字
-    var randNumber = Math.random() <0.5 ? 64 : 128 ;
+    var randNumber = Math.random() <0.5 ? 2 : 4 ;
     //在随机位置上显示数字
     board[randx][randy]=randNumber;
 
@@ -137,28 +143,36 @@ function generateOneNumber() {
 
     return true;
 }
-
+//键盘控制
 $(document).keydown(function (event) {
     switch (event.keyCode){
         case 37://left
+            //阻挡默认应该发生的效果(浏览器窗口滚动条移动)
+            event.preventDefault();
             if (moveLeft()) {
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isGameOver()",300);
             }
             break;
         case 38://up
+            //阻挡默认应该发生的效果(浏览器窗口滚动条移动)
+            event.preventDefault();
             if (moveUp()) {
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isGameOver()",300);
             }
             break;
         case 39://right
+            //阻挡默认应该发生的效果(浏览器窗口滚动条移动)
+            event.preventDefault();
             if (moveRight()) {
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isGameOver()",300);
             }
             break;
         case 40://down
+            //阻挡默认应该发生的效果(浏览器窗口滚动条移动)
+            event.preventDefault();
             if (moveDown()) {
                 setTimeout("generateOneNumber()",210);
                 setTimeout("isGameOver()",300);
@@ -168,6 +182,69 @@ $(document).keydown(function (event) {
             break;
     }
 })
+
+//触摸控制
+document.addEventListener('touchstart',function (event) {
+    //event.touches[0] 是一个数组,可捕捉多点触控
+    startx = event.touches[0].pageX ;
+    starty = event.touches[0].pageY;
+});
+//Andriod bug
+document.addEventListener('touchmove',function (event) {
+    event.preventDefault();
+});
+document.addEventListener('touchend',function (event) {
+    //event.changedTouches[0] 手指离开屏幕时候的坐标
+    endx = event.changedTouches[0].pageX;
+    endy = event.changedTouches[0].pageY;
+
+    var deltax = endx - startx;
+    var deltay = endy - starty;
+    /**
+     * 当用户点击而不是滑动的时候不进行操作
+     * 点击的时候会产生touchend事件,
+     * 当计算deltaxy的时候小于一定的范围的时候,则说明用户只是想点击而不是滑动
+     * */
+    if(Math.abs(deltax) < 0.1*documentWidth && Math.abs(deltay) < 0.1*documentWidth)
+        return;
+
+    //滑动是x方向
+    if(Math.abs(deltax) >= Math.abs(deltay)){
+        if(deltax>0){
+            //move right
+            if (moveRight()) {
+                setTimeout("generateOneNumber()",210);
+                setTimeout("isGameOver()",300);
+            }
+        }
+        else {
+            //move left
+            if (moveLeft()) {
+                setTimeout("generateOneNumber()",210);
+                setTimeout("isGameOver()",300);
+            }
+        }
+
+    }
+    //y方向
+    else{
+        if( deltay>0 ){
+            //move down
+            if (moveDown()) {
+                setTimeout("generateOneNumber()",210);
+                setTimeout("isGameOver()",300);
+            }
+        }
+        else {
+            //move up
+            if (moveUp()) {
+                setTimeout("generateOneNumber()",210);
+                setTimeout("isGameOver()",300);
+            }
+        }
+    }
+});
+
 //游戏结束条件: 1.没有空间 2.不可合并
 function isGameOver() {
     if(noSpace(board) && noMove(board)){
